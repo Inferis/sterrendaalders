@@ -6,9 +6,9 @@ config.model Newsitem do
     field :subtitle do end
     field :visible do end
     field :body do
-      ckeditor do 
-        true
-      end
+      #ckeditor do 
+      #  true
+      #end
     end
   end
 end
