@@ -1,0 +1,2 @@
+module AanmeldingenHelper
+end
