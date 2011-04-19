@@ -1,14 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sterrendaalders</title>
+	<title>De Sterrendaalders</title>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Ubuntu:bold' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js' %>
+  <%= javascript_include_tag 'jquery.backstretch.js' %>
   <%= csrf_meta_tag %>
+
+	<script type="text/javascript">
+		$.backstretch();
+	</script>
+	
+	<script type="text/javascript">
+
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-21816038-1']);
+	  _gaq.push(['_trackPageview']);
+
+	  (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+
+	</script>
+
 </head>
+
 <body>
+	
+	<div id="around">
+		
+		<div id="nav">
+			<h1>De Sterrendaalders <small>R. Steinerscholen - Lier</small></h1>
+			
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/aanmelden">Aanmelden</a></li>
+				<li><a href="/documenten">Documenten</a></li>
+			</ul>
+		</div>
 
-<%= yield %>
+		<div id="sidebar">
+			<h3>Ons Adres</h3>
+			<p>Mallekotstraat 43</br>
+			2500 Lier</p>
 
+			<h3>Contactinformatie</h3>
+			<p>Telefoon: 03 491 80 10</p>
+			<table border=0 cellpadding=0 cellspacing=0><tr>
+				<td width="50%" valign="top">
+					<h4>Basisschool</h4>
+					<p>Fax: 03 491 09 04</p>
+					<p>Email: <a href="mailto:info.basisschool@steinerschoollier.be">info.basisschool @steinerschoollier.be</a></p>
+				</td>
+				<td width="50%" valign="top">
+					<h4>Middelbare school</h4>
+					<p>Fax: 03 491 09 05</p>
+					<p>Email: <a href="mailto:info.middelbareschool@steinerschoollier.be">info.middelbareschool @steinerschoollier.be</a></p>
+				</td>
+			</tr></table>
+			<P>Oudervereniging: <a href="mailto:oudervereniging@steinerschoollier-bis.be">oudervereniging@steinerschoollier-bis.be</a>
+			
+			<%= yield :sidebar %>
+		</div>
+		
+		<div id="content">
+			<%= yield %>
+		</div>
+
+	</div>
+
+<strong></strong>
 </body>
+
 </html>

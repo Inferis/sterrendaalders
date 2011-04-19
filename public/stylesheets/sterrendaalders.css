@@ -1,0 +1,112 @@
+body {
+	background: url(/images/background.jpg);
+	background-size: 100%;
+	font-family: 'Ubuntu', 'Verdana';
+	font-size: 9pt;
+	margin: 0;
+	text-align: center;
+}
+
+p {
+	margin: 10px 0;
+}
+
+#around {
+	text-align: left;
+	width: 960px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+#nav {
+	background-color: #E1E4FF;
+	background-color: rgba(225,228,255,0.8);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCE1E4FF', EndColorStr='#CCE1E4FF');
+	color: #386890;
+	margin: 10px 0;
+	padding: 10px;
+	font-size: 15pt;
+}
+
+#nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav ul li {
+	margin: 0;
+	padding: 0;
+	padding-right: 20px;
+	display: inline;
+}
+
+#nav h1 {
+	color: RoyalBlue;
+	font-size: 20pt;
+	margin: 0 0 10px 0;
+}
+
+#nav h1 small {
+	font-size: 12pt;
+	margin-left: 10px;
+	position: relative;
+	top: -5px;
+}
+
+#nav a {
+	color: #386890;
+	text-decoration: none;
+}
+
+
+#content {
+	background-color: #eeeeee;
+	background-color: rgba(238,238,238,0.8);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCeeeeee', EndColorStr='#CCeeeeee');
+	color: #333;
+	margin: 10px 310px 10px 0;
+	padding: 20px;
+}
+
+#content h2, #content h3, #content h4 {
+	color: DarkOliveGreen ;
+}
+
+#content a {
+	color: Green;
+}
+
+#sidebar {
+	position: absolute;
+	right: 0;
+	background-color: #FFE4E1;
+	background-color: rgba(255,228,225,0.8);
+	filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=1, StartColorStr='#CCFFE4E1', EndColorStr='#CCFFE4E1');
+	width: 260px;
+	padding: 20px;
+	color: #333;
+	color: Indigo;
+}
+
+#sidebar h2, #sidebar h3, #sidebar h4 {
+	color: Maroon;
+}
+
+#sidebar a {
+	color: DarkMagenta;
+}
+
+h1 {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+h2, h3, h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.external {
+	margin-bottom: 20px;
+}
