@@ -46,4 +46,12 @@ Sterrendaalders::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  ActionMailer::Base.smtp_settings = {
+    :address  => "send.one.com",
+    :port  => 25,
+    :user_name  => "website@steinerschoollier-bis.be",
+    :password  => "tom_43",
+    :authentication  => :login
+  }
 end

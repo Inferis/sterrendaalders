@@ -48,12 +48,5 @@ module Sterrendaalders
     config.action_mailer.delivery_method = :smtp
     config.action_mailer.raise_delivery_errors = true
 
-    ActionMailer::Base.smtp_settings = {
-      :address  => "uit.telenet.be", # "send.one.com",
-      :port  => 25,
-      # :user_name  => "website@steinerschoollier-bis.be",
-      # :password  => "tom_43",
-      # :authentication  => :login
-    }
   end
 end
