@@ -1,0 +1,35 @@
+<p>
+	<%= label_tag(:geslacht, "Geslacht:") %>
+	<%= f.radio_button :current_geslacht, "meisje" %>
+	<%= label_tag(:geslacht_meisje, "meisje") %>
+	<%= f.radio_button :current_geslacht, "jongen" %>
+	<%= label_tag(:geslacht_jongen, "jongen") %>
+</p>
+
+<p>
+	<%= label_tag(:current_voornaam, "Voornaam:") %>
+	<%= f.text_field :current_voornaam %>
+</p>
+
+<p>
+	<%= label_tag(:current_achternaam, "Achternaam:") %>
+	<%= f.text_field :current_achternaam %>
+</p>
+
+<p>
+	<%= label_tag(:current_geboortedatum, "Geboortedatum:") %>
+	<%= f.date_select :current_geboortedatum, :start_year => Time.new.year-21, :end_year => Time.new.year-2, :include_blank => true %>
+</p>
+
+<p>
+	<%= label_tag(:current_school, "Huidige school:") %>
+	<%= f.text_field :current_school %>
+</p>
+
+<p>
+	<%= label_tag(:current_klas, "Huidige klas:") %>
+	<%= f.text_field :current_klas %>
+</p>
+
+
+

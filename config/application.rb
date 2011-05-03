@@ -28,7 +28,8 @@ module Sterrendaalders
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :nl
 
     # JavaScript files you want as :defaults (application.js is always included).
     # config.action_view.javascript_expansions[:defaults] = %w(jquery rails)
@@ -38,5 +39,21 @@ module Sterrendaalders
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    ActionView::Base.field_error_proc = Proc.new do |html_tag, instance|
+      include ActionView::Helpers::RawOutputHelper
+      raw %(<span class="field_with_errors">#{html_tag}</span>)
+    end
+
+    config.action_mailer.delivery_method = :smtp
+    config.action_mailer.raise_delivery_errors = true
+
+    ActionMailer::Base.smtp_settings = {
+      :address  => "uit.telenet.be", # "send.one.com",
+      :port  => 25,
+      # :user_name  => "website@steinerschoollier-bis.be",
+      # :password  => "tom_43",
+      # :authentication  => :login
+    }
   end
 end

@@ -1,0 +1,61 @@
+<h2>Aanmelden</h2>
+<h3>Formulier om interesse in onze school kenbaar te maken</h3>
+
+<div class="info">
+	<div class="steps">
+		<% stepnames = Hash['child' => 'Kind(eren)', 'family' => 'Gezin', 'address' => 'Adres', 'contact' => 'Contactgegevens', 'acquaintance' => 'Varia' ] %>
+		<% for step in @registration.steps
+			if step == @registration.current_step 
+				%><b><%= stepnames[step] %></b><%
+			else
+				%><span><%= stepnames[step] %></span><%
+			end
+			if step != @registration.steps.last 
+				%> &gt; <% 
+			end
+		end %>
+	</div>
+	
+	<%
+
+	@kinderen = @registration.kinderen
+	@kinderen = @kinderen[0...-1] if @registration.current_step == 'child'
+
+	unless @kinderen.empty? %>
+		<div class="kinderen">
+			<p><%= @kinderen.length == 1 ? 'kind' : 'kinderen' %>:</p>
+			<ul>
+			<% @kinderen.each do |c| %>
+				<li class="<%= c.geslacht %>"><%= c.voornaam %> <%= c.achternaam %></li>
+			<% end %>
+			</ul>
+			<div class="end"></div>
+		</div>
+	<% end %>
+</div>
+
+<% if !@flash_messages.blank? %>
+	<div class="flash"><%= raw @flash_messages %></div>
+<% end %>
+
+<% form_for @registration do |f| %>
+
+	<% if @registration.errors.any? %>
+	  <div class="errors"><ul>
+	    <% @registration.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	  </ul></div>
+	<% end %>
+
+  <%= render "#{@registration.current_step}_step", :f => f %>
+
+  <div class="buttons">
+	  <p><%= f.submit "Volgende stap" %></p>
+	  <p><%= f.submit "Nog een kind", :name => "add_child_button" if @registration.current_step == 'child' %></p>
+	  <p class="previous"><%= f.submit "Vorige stap", :name => "back_button" unless @registration.first_step? %></p>
+	<div style="clear: both"></div>
+  </div>
+<% end %>
+
+

@@ -1,0 +1,43 @@
+Er is een aanmelding verstuurd via de website. Onderstaande gegevens werden ingevoerd.
+
+<% if @registration.kinderen.count == 1 %>
+<% @registration.kinderen.each do |c| %>Kind
+----
+voornaam: <%= c.voornaam %>
+achternaam: <%= c.achternaam %> 
+geslacht: <%= c.geslacht %><% end %>
+<% else %>
+Kinderen
+--------
+<% @registration.kinderen.each do |c| %>* voornaam: <%= c.voornaam %>
+  achternaam: <%= c.achternaam %> 
+  geslacht: <%= c.geslacht %>
+<% end %><% end %>
+
+Gezin
+-----
+Naam vader: <%= @registration.fathers_name %>
+Naam moeder: <%= @registration.mothers_name %>
+
+Adres & Contactgegevens
+-----------------------
+<%= @registration.street %> <%= @registration.streetnr %> 
+<%= @registration.zipcode %> <%= @registration.city %> 
+
+Telefoon: <%= @registration.phone %>
+GSM: <%= @registration.gsm %>
+Fax: <%= @registration.fax %>
+Email: <%= @registration.email %>
+
+Varia
+-----
+<%if @registration.notes.blank? %>Geen opmerkingen gegeven<%else%>Opmerkingen:
+<%= @registration.notes %>
+<% end %>
+
+Kennismaking via: <%= @registration.acquaintance_desc %>
+	
+	
+	
+==
+Verstuurd via de website op <%= Time.now %>.

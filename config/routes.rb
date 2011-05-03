@@ -2,7 +2,11 @@ Sterrendaalders::Application.routes.draw do
   root :to => 'root#index'
 
   devise_for :users
-  resources :aanmelden
+  resources :registrations, :path => 'aanmelden' do
+    collection do
+      get 'thanks', :path => 'bedankt'
+    end
+  end
   resources :documenten
 
   # The priority is based upon order of creation:

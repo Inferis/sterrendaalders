@@ -1,0 +1,33 @@
+<h3>Varia</h3>
+<p>
+	<%= label_tag(:notes, "Opmerkingen:") %>
+	<%= f.text_area :notes, :rows => 3 %>
+</p>
+
+<p>
+	<%= label_tag(:acquaintance, "Kennismaking met de school via:") %>
+	<div>
+		<%= f.radio_button :acquaintance, "opendeur" %>
+		<%= label_tag(:acquaintance_opendeur, "Opendeurdag") %>
+	</div>
+	<div>
+		<%= f.radio_button :acquaintance, "informatieavond" %>
+		<%= label_tag(:acquaintance_informatieavond, "Informatieavond") %>
+	</div>
+	<div>
+		<%= f.radio_button :acquaintance, "affiches" %>
+		<%= label_tag(:acquaintance_affiches, "Affiches / advertenties") %>
+	</div>
+	<div>
+		<%= f.radio_button :acquaintance, "ouders" %>
+		<%= label_tag(:acquaintance_ouders, "Ouders van de school") %>
+	</div>
+	<div>
+		<%= f.radio_button :acquaintance, "oudleerling" %>
+		<%= label_tag(:acquaintance_oudleerling, "Oud-leerling") %>
+	</div>
+	<div>
+		<%= f.radio_button :acquaintance, "andere" %>
+		<%= label_tag(:acquaintance_andere, "Andere") %> <%= f.text_field :acquaintance_custom %>
+	</div>
+</p>

@@ -110,3 +110,98 @@ h2, h3, h4 {
 .external {
 	margin-bottom: 20px;
 }
+
+.field_with_errors input {
+	border-color: red;
+}
+
+.errors {
+	background: #ffcc00;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 10px 0;
+	padding: 10px;
+}
+
+.info {
+	background: white;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	margin: 20px 0;
+}
+
+.steps {
+	padding: 10px;
+	text-align: center;
+	color: #ccc;
+}
+
+.steps span {
+	color: #333;
+	padding: 0 5px;
+}
+
+.steps b {
+	color: #333;
+	padding: 0 5px;
+	font-size: 120%;
+}
+
+.kinderen {
+	padding: 10px;
+	border-top: dotted #ccc 1px;
+	background: white;
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	border-radius: 0 0 10px 10px;
+}
+
+.kinderen p {
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+	display: none;
+}
+
+.kinderen ul {
+	margin: 0;
+	padding: 0;
+}
+
+.kinderen li {
+	float: left;
+	padding: 3px 0px 2px 20px;
+	list-style: none;
+	margin: 2px;
+}
+
+.kinderen .end {
+	clear: both;
+}
+
+.kinderen li.jongen {
+	background: url(/images/jongen.png) left center no-repeat;
+}
+
+.kinderen li.meisje {
+	background: url(/images/meisje.png) left center no-repeat;
+}
+
+.buttons {
+	margin-top: 20px;
+}
+
+.buttons p {
+	display: inline;
+	float: right;
+}
+
+.buttons input, .buttons button {
+	padding: 10px;
+}
+
+.buttons p.previous {
+	float: left;
+}
