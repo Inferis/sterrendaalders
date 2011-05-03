@@ -5,8 +5,8 @@ class RegistrationMailer < ActionMailer::Base
     #recipients  "Aanmelding <aanmelding.basis@steinerschoollier-bis.be>, "
     @registration = registration
     attachments["aanmelding (" + @registration.current_voornaam + " " + @registration.current_achternaam + ").csv"] = build_xls(registration);
-    mail(:to => [ "Tom <tom@inferis.org>" ],
-         :bcc => [ "Dottom <dottom@10to1.be>" ],
+    mail(:to => [ "Aanmelding basisschool <aanmelding.basisschool@steinerschoollier.be>", "Aanmelding middelbare school <aanmelding.middelbare@steinerschoollier.be>" ],
+         :bcc => [ "tom@inferis.org", "Karel@karelvanschoors.be" ],
          :subject => "Aanmelding")
   end
   
