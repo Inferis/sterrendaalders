@@ -1,3 +1,5 @@
+RailsAdmin.authenticate_with {}
+
 RailsAdmin.config do |config|
 
 config.model Newsitem do
